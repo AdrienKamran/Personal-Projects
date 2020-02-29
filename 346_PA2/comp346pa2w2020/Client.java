@@ -111,7 +111,7 @@ public class Client extends Thread {
         
         try
         {
-        	inputStream = new Scanner(new FileInputStream("transaction2.txt"));
+        	inputStream = new Scanner(new FileInputStream("comp346pa2w2020/transaction2.txt"));
         }
         catch(FileNotFoundException e)
         {
