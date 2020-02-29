@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eddfc53e-3c9c-42f8-9e4c-ac0c2f7850c9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/346_PA2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/346_PA2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.txt" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/account.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346-PA2-w2020.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/comp346-PA2-w2020.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346-pa2-output-semaphores.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/comp346-pa2-output-semaphores.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346-pa2-output-unsynchronized.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/comp346-pa2-output-unsynchronized.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Client-v2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Comp346pa2driver-v2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Network-v2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Server-v2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Transactions-v2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/transaction2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp346pa2w2020/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/comp346pa2w2020/Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,33 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Transactions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Transactions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5372">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Network.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Network.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Comp346pa2driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Comp346pa2driver.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,11 +24,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Network.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Network.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="901">
+              <caret line="561" column="12" lean-forward="true" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="1153">
+              <caret line="161" column="87" lean-forward="true" selection-start-line="161" selection-start-column="87" selection-end-line="161" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="420" column="7" lean-forward="true" selection-start-line="420" selection-start-column="7" selection-end-line="420" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -78,7 +60,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Transactions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Transactions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>disconnect</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -87,6 +83,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/comp346pa2w2020/Client-v2.java" />
+        <option value="$PROJECT_DIR$/comp346pa2w2020/Client.java" />
+        <option value="$PROJECT_DIR$/comp346pa2w2020/Network.java" />
+        <option value="$PROJECT_DIR$/comp346pa2w2020/Server.java" />
       </list>
     </option>
   </component>
@@ -245,7 +244,7 @@
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32939324" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.17209302" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
@@ -257,7 +256,7 @@
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info id="Learn" order="3" />
+      <window_info id="Learn" order="3" weight="0.32965118" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.11662727" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32974634" />
@@ -310,14 +309,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Transactions.java">
+    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Accounts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Network.java">
+    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Transactions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
@@ -331,24 +330,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Client.java">
+    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Network.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="901">
+          <caret line="561" column="12" lean-forward="true" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Accounts.java">
+    <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="1153">
+          <caret line="161" column="87" lean-forward="true" selection-start-line="161" selection-start-column="87" selection-end-line="161" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comp346pa2w2020/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5372">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="697">
+          <caret line="420" column="7" lean-forward="true" selection-start-line="420" selection-start-column="7" selection-end-line="420" selection-end-column="7" />
         </state>
       </provider>
     </entry>
