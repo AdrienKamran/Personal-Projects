@@ -20,7 +20,10 @@ public class Comp346pa2driver {
         
     	Network objNetwork = new Network( );            /* Activate the network */
         objNetwork.start();
-
+        Server objServer1 = new Server("server1");          /* Start the first server thread */
+        objServer1.start();
+        Server objServer2 = new Server("server2");          /* Start the second server thread */
+        objServer2.start();
         Client objClient1 = new Client("sending");          /* Start the sending client thread */
         objClient1.start();
         Client objClient2 = new Client("receiving");        /* Start the receiving client thread */

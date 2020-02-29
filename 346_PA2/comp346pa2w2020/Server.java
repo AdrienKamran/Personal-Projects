@@ -424,20 +424,52 @@ public class Server extends Thread {
      */
       
     public void run()
-    {   Transactions trans = new Transactions();
-    	 long serverStartTime, serverEndTime;
-    
-	System.out.println("\n DEBUG : Server.run() - starting server thread " + getServerThreadId() + " " + Network.getServerConnectionStatus());
-    	
-	Transactions trans = new Transactions();
-    	long serverStartTime, serverEndTime;
-    
-	/* System.out.println("\n DEBUG : Server.run() - starting server thread " + objNetwork.getServerConnectionStatus()); */
-    	
-    	/* .....................................................................................................................................................................................................*/
-        
-        System.out.println("\n Terminating server thread - " + " Running time " + (serverEndTime - serverStartTime) + " milliseconds");
-	
+    {
+        Transactions trans = new Transactions();
+
+        /* Implementing the code for the run method, including both parallel Server threads */
+        if (this.getServerThreadId().equals("server1")) {
+            long server1StartTime, server1EndTime;
+            System.out.println("\n DEBUG : Server.run() - starting server thread " + Network.getServerConnectionStatus());
+            server1StartTime = System.currentTimeMillis();
+
+            setServerThreadRunningStatus1("running");
+
+            while ((Network.getInBufferStatus().equals("empty"))) {
+                setServerThreadRunningStatus1("idle");
+                Server.yield();
+            }
+
+            setServerThreadRunningStatus1("running");
+            processTransactions(trans);
+
+            setServerThreadRunningStatus1("terminated");
+            server1EndTime = System.currentTimeMillis();
+
+            System.out.println("\n Terminating server thread - " + " Running time " + (server1EndTime - server1StartTime) + " milliseconds");
+        }
+        else if (this.getServerThreadId().equals("server2")) {
+            long server2StartTime, server2EndTime;
+            System.out.println("\n DEBUG : Server.run() - starting server thread " + Network.getServerConnectionStatus());
+            server2StartTime = System.currentTimeMillis();
+
+            setServerThreadRunningStatus2("running");
+
+            while ((Network.getInBufferStatus().equals("empty"))) {
+                setServerThreadRunningStatus1("idle");
+                Server.yield();
+            }
+            setServerThreadRunningStatus1("running");
+            processTransactions(trans);
+
+            setServerThreadRunningStatus1("terminated");
+            server2EndTime = System.currentTimeMillis();
+
+            System.out.println("\n Terminating server thread - " + " Running time " + (server2EndTime - server2StartTime) + " milliseconds");
+        }
+        if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+            Network.disconnect(Network.getServerIP());
+        }
     }
 }
 
