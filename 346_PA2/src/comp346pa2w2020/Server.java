@@ -207,7 +207,7 @@ public class Server extends Thread {
         
         try
         {
-         inputStream = new Scanner(new FileInputStream("comp346pa2w2020/account.txt"));
+         inputStream = new Scanner(new FileInputStream("src/comp346pa2w2020/account.txt"));
         }
         catch(FileNotFoundException e)
         {
@@ -273,14 +273,14 @@ public class Server extends Thread {
          /* Process the accounts until the client disconnects */
          while ((!Network.getClientConnectionStatus().equals("disconnected")))
          {
-        	// while ( (Network.getInBufferStatus().equals("empty") && !Network.getClientConnectionStatus().equals("disconnected")) ) 
-        	// { 
-        	//	 Thread.yield(); 	/* Yield the cpu if the network input buffer is empty */
-        	// }
+        	while ( (Network.getInBufferStatus().equals("empty") && !Network.getClientConnectionStatus().equals("disconnected")) )
+        	{
+        	 Thread.yield(); 	/* Yield the cpu if the network input buffer is empty */
+        	}
 
-             if ((Network.getInBufferStatus().equals("full"))){
-                 Server.yield();
-             }
+/*        	if ((Network.getInBufferStatus().equals("full"))){
+        	    Server.yield();
+        	}*/
 
         	 if (!Network.getInBufferStatus().equals("empty"))
         	 { 
@@ -348,7 +348,7 @@ public class Server extends Thread {
      * @param i, amount
      */
    
-     public double deposit(int i, double amount)
+     public synchronized double deposit(int i, double amount)
      {  double curBalance;      /* Current account balance */
        
      		curBalance = account[i].getBalance( );          /* Get current account balance */
@@ -377,7 +377,7 @@ public class Server extends Thread {
      * @param i, amount
      */
  
-     public double withdraw(int i, double amount)
+     public synchronized double withdraw(int i, double amount)
      {  double curBalance;      /* Current account balance */
         
 	curBalance = account[i].getBalance( );          /* Get current account balance */
@@ -396,7 +396,7 @@ public class Server extends Thread {
      * @param i
      */
  
-     public double query(int i)
+     public synchronized double query(int i)
      {  double curBalance;      /* Current account balance */
         
 	curBalance = account[i].getBalance( );          /* Get current account balance */
@@ -447,6 +447,10 @@ public class Server extends Thread {
             server1EndTime = System.currentTimeMillis();
 
             System.out.println("\n Terminating server thread - " + " Running time " + (server1EndTime - server1StartTime) + " milliseconds");
+            if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+                System.out.println("\n Both server threads terminated, disconnecting Server from Network.");
+                Network.disconnect(Network.getServerIP());
+            }
         }
         else if (this.getServerThreadId().equals("server2")) {
             long server2StartTime, server2EndTime;
@@ -466,10 +470,10 @@ public class Server extends Thread {
             server2EndTime = System.currentTimeMillis();
 
             System.out.println("\n Terminating server thread - " + " Running time " + (server2EndTime - server2StartTime) + " milliseconds");
-        }
-        if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
-            System.out.println("\n DEBUG : Disconnecting Server from Network.");
-            Network.disconnect(Network.getServerIP());
+            if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+                System.out.println("\n Both server threads terminated, disconnecting Server from Network.");
+                Network.disconnect(Network.getServerIP());
+            }
         }
     }
 }

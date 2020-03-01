@@ -559,7 +559,7 @@ public class Network extends Thread {
 
         while (true) {
             /* Implement the code for the run method */
-            System.out.println(serverConnectionStatus);
+            //System.out.println(serverConnectionStatus);
 
             if ((clientConnectionStatus.equals("disconnected") && serverConnectionStatus.equals("disconnected"))) {
                 break;
