@@ -177,7 +177,9 @@ public class Server extends Thread {
 
         /* Process the accounts until the client disconnects */
         while ((!objNetwork.getClientConnectionStatus().equals("disconnected"))) {
-            // while ((objNetwork.getInBufferStatus().equals("empty"));
+            if ((objNetwork.getInBufferStatus().equals("full"))){
+                Server.yield();
+            }
             /* Alternatively, busy-wait until the network input buffer is available */
             if (!objNetwork.getInBufferStatus().equals("empty")) {
                 System.out.println("\n DEBUG : Server.processTransactions() - transferring in account "
