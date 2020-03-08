@@ -441,11 +441,11 @@ public class Server extends Thread {
             setServerThreadRunningStatus1("terminated");
             server1EndTime = System.currentTimeMillis();
 
-            System.out.println("\n Terminating server thread - " + " Running time " + (server1EndTime - server1StartTime) + " milliseconds");
-            if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
-                System.out.println("\n Both server threads terminated, disconnecting Server from Network.");
-                Network.disconnect(Network.getServerIP());
-            }
+            System.out.println("\n Terminating server 1 thread - " + " Running time " + (server1EndTime - server1StartTime) + " milliseconds");
+            //if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+                //System.out.println("\n Server thread 2 terminated first, then Server thread 1. Disconnecting from Network.");
+                //Network.disconnect(Network.getServerIP());
+            //}
         }
         else if (this.getServerThreadId().equals("server2")) {
             long server2StartTime, server2EndTime;
@@ -457,14 +457,18 @@ public class Server extends Thread {
 
             processTransactions(trans);
 
-            setServerThreadRunningStatus1("terminated");
+            setServerThreadRunningStatus2("terminated");
             server2EndTime = System.currentTimeMillis();
 
-            System.out.println("\n Terminating server thread - " + " Running time " + (server2EndTime - server2StartTime) + " milliseconds");
-            if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
-                System.out.println("\n Both server threads terminated, disconnecting Server from Network.");
-                Network.disconnect(Network.getServerIP());
-            }
+            System.out.println("\n Terminating server 2 thread - " + " Running time " + (server2EndTime - server2StartTime) + " milliseconds");
+            //if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+                //System.out.println("\n Server thread 1 terminated first, then Server thread 2. Disconnecting from Network.");
+                //Network.disconnect(Network.getServerIP());
+            //}
+        }
+        if (getServerThreadRunningStatus1().equals("terminated") && getServerThreadRunningStatus2().equals("terminated")){
+            System.out.println("\n Both Server threads are terminated. Disconnecting Server from Network.");
+            Network.disconnect(Network.getServerIP());
         }
     }
 }

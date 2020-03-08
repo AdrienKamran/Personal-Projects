@@ -565,6 +565,7 @@ public class Network extends Thread {
                 break;
             }
             Network.yield();
+            //System.out.println("\n [!] Network is yielding [!]");
 
         }
 
