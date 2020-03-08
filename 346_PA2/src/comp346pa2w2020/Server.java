@@ -435,12 +435,7 @@ public class Server extends Thread {
 
             setServerThreadRunningStatus1("running");
 
-            while ((Network.getInBufferStatus().equals("empty"))) {
-                setServerThreadRunningStatus1("idle");
-                Server.yield();
-            }
 
-            setServerThreadRunningStatus1("running");
             processTransactions(trans);
 
             setServerThreadRunningStatus1("terminated");
@@ -459,11 +454,7 @@ public class Server extends Thread {
 
             setServerThreadRunningStatus2("running");
 
-            while ((Network.getInBufferStatus().equals("empty"))) {
-                setServerThreadRunningStatus1("idle");
-                Server.yield();
-            }
-            setServerThreadRunningStatus1("running");
+
             processTransactions(trans);
 
             setServerThreadRunningStatus1("terminated");
