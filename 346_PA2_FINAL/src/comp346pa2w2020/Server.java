@@ -1,3 +1,5 @@
+package comp346pa2w2020;
+
 
 import java.util.Scanner;
 import java.io.FileInputStream;
@@ -193,7 +195,7 @@ public class Server extends Thread {
         int i = 0; /* index of accounts array */
 
         try {
-            inputStream = new Scanner(new FileInputStream("account.txt"));
+            inputStream = new Scanner(new FileInputStream("src/comp346pa2w2020/account.txt"));
         } catch (FileNotFoundException e) {
             System.out.println("File account.txt was not found");
             System.out.println("or could not be opened.");
@@ -358,7 +360,7 @@ public class Server extends Thread {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    System.out.println("sleepo beepo woke up");
+
                 }
             }
 
@@ -454,7 +456,7 @@ public class Server extends Thread {
             processTransactions(trans);
             serverEndTime = System.currentTimeMillis();
             setServerThreadRunningStatus1("terminated");
-            System.out.println("\n Terminating server thread - " + getServerThreadId() + " Running time "
+            System.out.println("\n Terminating server 1 thread - Running time "
                     + (serverEndTime - serverStartTime) + " milliseconds");
         }
 
@@ -468,12 +470,15 @@ public class Server extends Thread {
             processTransactions(trans);
             serverEndTime2 = System.currentTimeMillis();
             setServerThreadRunningStatus2("terminated");
-            System.out.println("\n Terminating server thread - " + getServerThreadId() + " Running time "
+            System.out.println("\n Terminating server 2 thread - Running time "
                     + (serverEndTime2 - serverStartTime2) + " milliseconds");
         }
 
         if (getServerThreadRunningStatus1().equals("terminated")
-                && getServerThreadRunningStatus2().equals("terminated"))
+                && getServerThreadRunningStatus2().equals("terminated")) {
+            System.out.println("\n Both Server threads are terminated."
+                    + " Disconnecting Server from Network.");
             Network.disconnect(Network.getServerIP());
+        }
     }
 }

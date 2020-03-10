@@ -1,4 +1,6 @@
 
+package comp346pa2w2020;
+
 import java.util.concurrent.*;
 
 /*
@@ -613,6 +615,6 @@ public class Network extends Thread {
 
         }
 
-        System.out.println("\n Terminating network thread - Client & Server diconnected");
+        System.out.println("\n Terminating network thread - Client and Server diconnected");
     }
 }

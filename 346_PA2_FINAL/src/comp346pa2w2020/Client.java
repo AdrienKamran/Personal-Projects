@@ -1,3 +1,5 @@
+package comp346pa2w2020;
+
 
 import java.util.Scanner;
 import java.io.FileInputStream;
@@ -101,7 +103,7 @@ public class Client extends Thread {
         int i = 0; /* Index of transactions array */
 
         try {
-            inputStream = new Scanner(new FileInputStream("transaction2.txt"));
+            inputStream = new Scanner(new FileInputStream("src/comp346pa2w2020/transaction2.txt"));
         } catch (FileNotFoundException e) {
             System.out.println("File transaction.txt was not found");
             System.out.println("or could not be opened.");
@@ -219,7 +221,7 @@ public class Client extends Thread {
 
             sendClientEndTime = System.currentTimeMillis();
 
-            System.out.println("\n Terminating client send thread - " + " Running time "
+            System.out.println("\n Terminating client sending thread - " + " Running time "
                     + (sendClientEndTime - sendClientStartTime) + " milliseconds");
 
         } else if (clientOperation.equals("receiving")) {
@@ -233,7 +235,7 @@ public class Client extends Thread {
             receiveClientEndTime = System.currentTimeMillis();
             Network.disconnect(Network.getClientIP());
 
-            System.out.println("\n Terminating client receive thread - " + " Running time "
+            System.out.println("\n Terminating client receiving thread - " + " Running time "
                     + (receiveClientEndTime - receiveClientStartTime) + " milliseconds");
         }
 
