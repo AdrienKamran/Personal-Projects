@@ -11,6 +11,8 @@
 #include "Grid.h"
 #include "CoordinateLines.h"
 
+// You should be able to see this!
+
 // Constants for defining window size
 const float SCR_WIDTH = 1440.0, SCR_HEIGHT = 900.0;
 
