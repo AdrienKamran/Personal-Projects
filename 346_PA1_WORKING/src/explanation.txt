@@ -1,8 +1,0 @@
-The server thread and the client thread end at different times.
-Specifically, the server thread ends after the client thread, every time.
-
-This has to do with how the client thread's last action is to receive the
-transactions, which ends before the server processes the final transaction.
-The client cannot receive an account which hasn't been processed. If the
-server thread ended before the client thread, then there would be no
-guarantee that the last accounts were processed at all.

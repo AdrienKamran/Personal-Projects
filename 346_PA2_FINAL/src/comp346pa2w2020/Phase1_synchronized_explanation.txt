@@ -1,8 +1,0 @@
-During Phase (i), I chose to use the synchronized statement (using Objects as locks) to protect the critical sections.
-
-This is in part due to my trial-and-error experience, but mostly due to my findings after reading
-the official Java documentation, as seen here in "Intrinsic Locks and Synchronization": 
-
-https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html
-
-The use of Objects as locks succeeded, while the use of "this"'s intrinsic lock failed.
